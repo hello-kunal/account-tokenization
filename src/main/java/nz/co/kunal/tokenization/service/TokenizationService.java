@@ -33,6 +33,7 @@ public class TokenizationService {
                 tokens.add(existing.get().token());
                 continue;
             }
+            // in case of cocurrent requests
             tokens.add(createMappingWithRetry(normalizedAccountNumber, original));
         }
 
